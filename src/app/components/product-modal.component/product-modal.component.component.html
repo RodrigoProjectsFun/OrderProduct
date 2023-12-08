@@ -1,0 +1,25 @@
+<div class="product-modal">
+    <h2>{{ updatedProduct.name }}</h2>
+  
+    <div class="product-details">
+      <p><strong>ID:</strong> {{ updatedProduct.id }}</p>
+      <p><strong>Unit Price:</strong> ${{ updatedProduct.unitPrice }}</p>
+    </div>
+  
+    <div class="quantity-input">
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        [(ngModel)]="updatedProduct.quantity"
+        min="0"
+        placeholder="Enter quantity"
+      />
+    </div>
+  
+    <div class="modal-buttons">
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button color="primary" (click)="onSaveClick()">Save</button>
+    </div>
+  </div>
+  

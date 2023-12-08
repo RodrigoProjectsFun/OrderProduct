@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">MY ORDERS</span>
+                    <button class="btn btn-success float-end" routerLink="/add-order">NEW</button>
+                    <table class="table table-striped mt-3">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Order #</th>
+                                <th>Date</th>
+                                <th># Products</th>
+                                <th>Final Price</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let order of orders">
+                                <td>{{ order.id }}</td>
+                                <td>{{ order.orderNumber }}</td>
+                                <td>{{ order.date }}</td>
+                                <td>{{ order.productCount }}</td>
+                                <td>{{ order.finalPrice  }}</td>
+                                <td>
+                                    <button (click)="editOrder(order.id)">Edit</button>
+                                    <button (click)="confirmDelete(order.id)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
